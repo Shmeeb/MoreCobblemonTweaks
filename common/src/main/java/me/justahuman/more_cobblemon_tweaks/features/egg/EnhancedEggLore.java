@@ -10,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.function.Function;
 
 public abstract class EnhancedEggLore {
@@ -39,6 +38,15 @@ public abstract class EnhancedEggLore {
                 && getSpAtkIV() != null && getSpAtkIV() >= iv
                 && getSpDefIV() != null && getSpDefIV() >= iv
                 && getSpeedIV() != null && getSpeedIV() >= iv;
+    }
+    public boolean isIVs(int iv) {
+        return hasIVs()
+                && getHpIV() != null && getHpIV() == iv
+                && getAtkIV() != null && getAtkIV() == iv
+                && getDefIV() != null && getDefIV() == iv
+                && getSpAtkIV() != null && getSpAtkIV() == iv
+                && getSpDefIV() != null && getSpDefIV() == iv
+                && getSpeedIV() != null && getSpeedIV() == iv;
     }
     public abstract Integer getHpIV();
     public abstract Integer getAtkIV();

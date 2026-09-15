@@ -40,7 +40,7 @@ public class LoreEnhancements {
         Component name = enhancedEggLore.getName(lore);
         final ChatFormatting shinyColor = ModConfig.isEnabled("shiny_egg_indicator") ? enhancedEggLore.getShinyColor() : null;
         final boolean perfect = ModConfig.isEnabled("perfect_iv_egg_indicator") && enhancedEggLore.hasIVs(31);
-        final boolean minimum = ModConfig.isEnabled("minimum_iv_egg_indicator") && enhancedEggLore.hasIVs(0);
+        final boolean minimum = ModConfig.isEnabled("minimum_iv_egg_indicator") && enhancedEggLore.isIVs(0);
         final boolean textIndicators = ModConfig.isEnabled("text_egg_indicators");
         if (shinyColor != null && !textIndicators) {
             name = name.copy().append(translate("egg.shiny.symbol").withStyle(shinyColor));
